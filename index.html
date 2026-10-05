@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Future Face Scanner</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="loading" class="screen full-center">
+        <div class="loader">
+            <div class="loader-circle"></div>
+            <div class="loader-text">SYSTEM INITIALIZING...</div>
+        </div>
+    </div>
+
+    <div id="home" class="screen hidden full-center">
+        <div class="glitch-wrapper">
+            <h1 class="title">SEE YOUR <br><span class="highlight">FUTURE FACE</span></h1>
+        </div>
+        <p class="subtitle">Advanced AI Temporal Projection</p>
+        <button id="start-btn" class="cyber-button">
+            START FUTURE SCAN
+            <span class="cyber-button-glitch"></span>
+        </button>
+    </div>
+
+    <div id="scanner" class="screen hidden">
+        <div class="header">
+            <div class="target-title">TARGET ACQUISITION</div>
+        </div>
+        <div class="camera-wrapper">
+            <div class="camera-container">
+                <video id="camera" autoplay playsinline muted></video>
+                <div class="camera-guides">
+                    <div class="corner top-left"></div>
+                    <div class="corner top-right"></div>
+                    <div class="corner bottom-left"></div>
+                    <div class="corner bottom-right"></div>
+                    <div class="face-outline"></div>
+                </div>
+                <div class="scan-overlay hidden" id="scan-bar"></div>
+            </div>
+            <div class="hud-info">
+                <span>SYSTEM: <span class="highlight">ONLINE</span></span>
+                <span>DATA LINK: <span class="highlight">SECURE</span></span>
+            </div>
+        </div>
+        
+        <div class="controls">
+            <div class="status-message" id="status-message">AWAITING CAMERA ACCESS...</div>
+            <button id="capture-btn" class="cyber-button pulse" disabled>
+                INITIATE SCAN
+            </button>
+        </div>
+    </div>
+
+    <div id="error-screen" class="screen popup hidden">
+        <div class="popup-backdrop"></div>
+        <div class="popup-content">
+            <div class="error-icon">⚠️</div>
+            <h2 id="error-title">SCAN FAILED</h2>
+            <p id="error-text">Face not detected properly. Please adjust and try again.</p>
+            <button id="retry-btn" class="cyber-button small">RETRY</button>
+        </div>
+    </div>
+
+    <canvas id="canvas" style="display:none;"></canvas>
+
+    <script src="script.js"></script>
+</body>
+</html>
